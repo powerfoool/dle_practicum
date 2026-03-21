@@ -1,5 +1,6 @@
 import torch
 from tqdm.auto import tqdm
+from datetime import datetime
 
 
 def train_model(
@@ -11,6 +12,8 @@ def train_model(
     criterion,
     optimizer,
     scheduler,
+    save_model_every_epoch=True,
+    config_path="main",
 ):
     device = next(model.parameters()).device.type
     for epoch in range(1, num_epochs + 1):
@@ -70,3 +73,8 @@ def train_model(
                 f"val rouge2: {rouge2:.4f}, "
                 f"lr: {current_lr:.2g} "
         )
+        
+        if save_model_every_epoch:
+            model_path = f"models/{config_path}_{int(datetime.now().timestamp())}__state_dict"
+            torch.save(model.state_dict(), model_path)
+            print(f"Модель сохранена в: {model_path}")
