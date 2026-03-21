@@ -1,0 +1,4 @@
+env*
+Project/data/tweets.txt
+/Project/models/*
+creds

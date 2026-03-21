@@ -1,0 +1,11 @@
+Имя ресурса: r-dle-clearml-2-3-3-11509048
+Данные для подключения к виртуальной машине. IP-адрес -- 89.169.178.89.
+Приватный ключ:
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUx
+OQAAACD+745Wft3yu1P5bLM3yAGd36NzEjn8D7gn4Ywh0ywImwAAAIgbrGWvG6xlrwAAAAtzc2gt
+ZWQyNTUxOQAAACD+745Wft3yu1P5bLM3yAGd36NzEjn8D7gn4Ywh0ywImwAAAEC/AoXIPo1RwiGW
+iUvgD34oTz/RC5CbVTGuZtdUjxhCNf7vjlZ+3fK7U/lsszfIAZ3fo3MSOfwPuCfhjCHTLAibAAAA
+AAECAwQF
+-----END OPENSSH PRIVATE KEY-----
+Имя пользователя - ubuntu
