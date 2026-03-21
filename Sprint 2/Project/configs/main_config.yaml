@@ -1,0 +1,7 @@
+batch_size: 64
+num_epochs: 3
+min_len: 16
+max_len: 32
+tokenizer_model_name: "bert-base-uncased"
+embedding_size: 128
+hidden_dim: 256
