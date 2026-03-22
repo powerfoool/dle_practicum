@@ -35,14 +35,30 @@ class next_token_model(nn.Module):
             elif isinstance(module, (nn.Embedding)):
                 nn.init.normal_(module.weight, mean=0, std=0.1)
 
+    # def forward(self, input_ids, lengths):
+    #     x = self.embedding(input_ids)  # [batch_size, seq_len, hidden_dim]
+    #     packed = nn.utils.rnn.pack_padded_sequence(
+    #         x, lengths.cpu(), batch_first=True, enforce_sorted=False
+    #     )
+    #     _, (h_n, _) = self.lstm(packed)  # [batch_size, seq_len, hidden_dim]
+    #     x = h_n[-1]
+    #     x = self.norm(x)  # [batch_size, hidden_dim]
+    #     x = self.dropout(x)
+    #     x = self.fc(x)  # [batch_size, vocab_size]
+    #     return x
     def forward(self, input_ids, lengths):
         x = self.embedding(input_ids)  # [batch_size, seq_len, hidden_dim]
         packed = nn.utils.rnn.pack_padded_sequence(
             x, lengths.cpu(), batch_first=True, enforce_sorted=False
         )
-        _, (h_n, _) = self.lstm(packed)  # [batch_size, seq_len, hidden_dim]
-        x = h_n[-1]
-        x = self.norm(x)  # [batch_size, hidden_dim]
+        packed_output, _ = self.lstm(packed)
+        output, _ = nn.utils.rnn.pad_packed_sequence(
+            packed_output, batch_first=True
+        )  # [batch_size, seq_len, hidden_dim * num_directions]
+        batch_size = output.size(0)
+        indices = (lengths - 1).view(-1, 1, 1).expand(batch_size, 1, output.size(2))
+        last_outputs = output.gather(1, indices).squeeze(1)  # [batch_size, hidden_dim x num_directions]
+        x = self.norm(last_outputs)  # [batch_size, hidden_dim x num_directions]
         x = self.dropout(x)
         x = self.fc(x)  # [batch_size, vocab_size]
         return x
