@@ -42,7 +42,7 @@ class next_token_model(nn.Module):
     #     )
     #     _, (h_n, _) = self.lstm(packed)  # [batch_size, seq_len, hidden_dim]
     #     x = h_n[-1]
-    #     x = self.norm(x)  # [batch_size, hidden_dim]
+    #     x = self.norm(x)  # [batch_size, hiцdden_dim]
     #     x = self.dropout(x)
     #     x = self.fc(x)  # [batch_size, vocab_size]
     #     return x

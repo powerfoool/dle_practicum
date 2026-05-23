@@ -1,0 +1,12 @@
+{
+  "vocab_size": 3000,
+  "special_tokens": [
+    "<pad>",
+    "<unk>",
+    "<bos>",
+    "<eos>",
+    "<mask>"
+  ],
+  "training_sentences": 328255,
+  "save_path": "tokenizer_3k.json"
+}

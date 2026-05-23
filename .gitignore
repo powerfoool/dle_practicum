@@ -138,3 +138,6 @@ tensorboard/
 # =========================================================
 **/backup/
 **/.complete/
+
+# External datasets cloned as their own repos
+Sprint 5/factRuEval-2016/

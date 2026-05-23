@@ -1,0 +1,10 @@
+sudo apt update -y
+sudo apt install ubuntu-drivers-common -y
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo apt --fix-broken install
+sudo apt remove --purge '^nvidia-.*'
+sudo apt remove --purge '^linux-modules-nvidia-.*'
+sudo apt autoremove --purge
+sudo apt update -y
+sudo apt full-upgrade -y

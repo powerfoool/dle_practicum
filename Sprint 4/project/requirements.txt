@@ -1,0 +1,9 @@
+numpy
+pandas
+tqdm
+timm
+transformers
+albumentations
+pillow
+paramiko
+ipykernel
