@@ -1,0 +1,140 @@
+# =========================================================
+# OS / editor
+# =========================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# =========================================================
+# Python / Jupyter
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# =========================================================
+# Virtual environments (all variants present in this repo)
+# =========================================================
+venv/
+.venv/
+.venv*/
+env/
+env*/
+myenv/
+ENV/
+pyvenv.cfg
+
+# =========================================================
+# Secrets / credentials  --  NEVER commit these
+# =========================================================
+.env
+.env.*
+*.env
+!*.env.example
+creds
+creds.*
+credentials
+credentials.*
+clear_ml_creds
+clearml.conf
+.clearml/
+kaggle.json
+.kaggle/
+wandb/
+.wandb/
+*.pem
+*.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.p12
+*.pfx
+.netrc
+
+# =========================================================
+# Model weights / checkpoints (heavy, regenerable)
+# =========================================================
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.safetensors
+*.onnx
+*.pb
+*.tflite
+*.bin
+*.weights
+*.joblib
+*.pkl
+*.pickle
+*_state_dict
+model_state.checkpoint
+checkpoint-*/
+sft/
+
+# =========================================================
+# Datasets / downloaded data (heavy, regenerable)
+# =========================================================
+data/
+dataset/
+datasets/
+**/MNIST/
+**/FashionMNIST/
+**/CIFAR*/
+**/clothes_dataset/
+**/ogyeiv2/
+**/raw/
+**/faces/
+
+# Heavy text/audio/video/archive blobs
+*.csv.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+*.parquet
+*.feather
+*.arrow
+
+# Big embeddings / pretrained word vectors
+*.vec
+*.vec.gz
+cc.*.300.bin
+word2vec-*.gz
+glove*.txt
+
+# =========================================================
+# Logs / experiments
+# =========================================================
+logs/
+*.log
+mlruns/
+runs/
+lightning_logs/
+outputs/
+tb_logs/
+tensorboard/
+
+# =========================================================
+# Project-specific (backups, scratch)
+# =========================================================
+**/backup/
+**/.complete/
